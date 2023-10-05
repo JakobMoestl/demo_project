@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*CSS comment*/
+        .completed {
+            text-decoration: line-through;
+        }
+    </style>
+</head>
+<body>
+        <!-- HTML comment -->
+        <div id="TODO-list">
+           <h2> TODO List</h2>
+           <form id="TODO form">
+        <input type = "text" name="" id="todo-input" placeholder="What to do"input>
+        
+        <button type="submit">Add</button>  
+    </form>
+        </div>
+        <script>
+            const todos = [];
+            const todosList = document.getElementById("todos");
+            const todoForm = document.getElementById("todo-Form");
+            const todoInput = document.getElementById("todo-input");
+
+            function addTodo(text) {
+                todos.push({text: text, completed: false});
+                //TODO: render
+            }
+
+            function renderTodos(){
+                todos.forEach( (todo, index) => { 
+                    const todoItem = document.createElement ("li")
+                    todoItem.className = `todo-item ${todo}`
+                    todoItem.textContent = todo.text
+                    todoItem.addEventListener( "click", () => { /* TODO toggleTODO*/})
+                    todosList.appendChild(todoItem)
+                } )
+            }
+
+        </script>
+
+</body>
+</html>
